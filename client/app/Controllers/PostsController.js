@@ -17,6 +17,7 @@ export default class PostsController {
       title: form.title.value,
       description: form.description.value
     }
+    console.log(rawPost)
     postsService.createPost(rawPost)
   }
 }
