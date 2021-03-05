@@ -5,6 +5,25 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
+
+ .body-color{
+   background-color: #EAE1DF;
+ }
+ .brimstone-size{
+   font-size: 30px;
+ }
+ .prayer-hands{
+   font-size: 20px;
+ }
+ .background-img{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../img/popecat.jpg");
+  
+ }
+ .card-opacity{
+   opacity: 1
+ }
 :root {
   --blue: blue;
   --indigo: indigo;
