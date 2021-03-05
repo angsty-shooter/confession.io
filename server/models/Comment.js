@@ -1,20 +1,21 @@
 import mongoose from 'mongoose'
 const Schema = mongoose.Schema
+const ObjectId = mongoose.SchemaTypes.ObjectId
 
-const Value = new Schema(
+const Comment = new Schema(
   {
-    title: { type: String, required: true },
     description: { type: String, required: true },
+    post: { type: ObjectId, ref: 'Post', required: true },
     creatorId: { type: String, ref: 'Account', required: true }
   },
   { timestamps: true, toJSON: { virtuals: true } }
 )
 
-Value.virtual('creator', {
+Comment.virtual('creator', {
   localField: 'creatorId',
   ref: 'Account',
   foreignField: '_id',
   justOne: true
 })
 
-export default Value
+export default Comment

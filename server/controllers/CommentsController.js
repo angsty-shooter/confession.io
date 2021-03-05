@@ -1,9 +1,10 @@
 import BaseController from '../utils/BaseController'
 import { Auth0Provider } from '@bcwdev/auth0provider'
+import { commentsService } from '../services/CommentsService'
 
-export class ValuesController extends BaseController {
+export class CommentsController extends BaseController {
   constructor() {
-    super('api/values')
+    super('api/comments')
     this.router
       .get('', this.getAll)
       // NOTE: Beyond this point all routes require Authorization tokens (the user must be logged in)
@@ -13,7 +14,7 @@ export class ValuesController extends BaseController {
 
   async getAll(req, res, next) {
     try {
-      return res.send(['value1', 'value2'])
+      return res.send(await commentsService.find(req.query))
     } catch (error) {
       next(error)
     }
@@ -23,7 +24,7 @@ export class ValuesController extends BaseController {
     try {
       // NOTE NEVER TRUST THE CLIENT TO ADD THE CREATOR ID
       req.body.creatorId = req.userInfo.id
-      res.send(req.body)
+      res.send(201, await commentsService.create(req.body))
     } catch (error) {
       next(error)
     }
