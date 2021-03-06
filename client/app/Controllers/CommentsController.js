@@ -10,11 +10,13 @@ export default class CommentsController {
     ProxyState.on('comments', _draw)
   }
 
-  createComment(event) {
+  createComment(event, id, postId) {
     event.preventDefault()
     const form = event.target
     console.log(form)
     const rawComment = {
+      postId: postId,
+      id: id,
       description: form.description.value
     }
     commentsService.createComment(rawComment)

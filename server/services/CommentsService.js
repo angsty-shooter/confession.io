@@ -3,7 +3,6 @@ import { BadRequest } from '../utils/Errors'
 
 class CommentsService {
   async create(body) {
-    body.preventDefault()
     return await dbContext.Comments.create(body)
   }
 

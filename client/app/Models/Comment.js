@@ -6,6 +6,8 @@ export default class Comment {
   }
 
   get Template() {
-    return this.id
+    return `
+    <p>${this.description}</p>
+   `
   }
 }

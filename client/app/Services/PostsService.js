@@ -12,6 +12,15 @@ class PostsService {
       console.error(error)
     }
   }
+
+  async getApiPosts() {
+    try {
+      const res = await api.get('/api/posts')
+      ProxyState.posts = res.data.map(p => new Post(p))
+    } catch (error) {
+      console.error(error)
+    }
+  }
 }
 
 export const postsService = new PostsService()

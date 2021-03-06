@@ -3,9 +3,9 @@ import Comment from '../Models/Comment.js'
 import { api } from './AxiosService.js'
 
 class CommentsService {
-  async createComment(formData) {
+  async createComment(rawComment) {
     try {
-      const res = await api.post('/api/comments', formData)
+      const res = await api.post('/api/comments', rawComment)
       console.log(res)
       ProxyState.comments = [...ProxyState.comments, new Comment(res.data)]
     } catch (error) {

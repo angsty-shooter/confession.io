@@ -3,11 +3,16 @@ import { postsService } from '../Services/PostsService.js'
 
 function _draw() {
   const posts = ProxyState.posts
+  let template = ''
+  posts.forEach(p => template += p.Template)
+
+  document.getElementById('posts').innerHTML = template
   console.log(posts)
 }
 export default class PostsController {
   constructor() {
     ProxyState.on('posts', _draw)
+    postsService.getApiPosts()
   }
 
   createPost(event) {
