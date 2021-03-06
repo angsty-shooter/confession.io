@@ -99,18 +99,12 @@
                         </button>
                         <div class="collapse" id="collapseExample">
                             <p>${data.comment.descriptions}</p>
-                            <span class="col-2"><button
-                                    onclick="app.commentsController.createComment(event)">😀</button></span>
-                            <span class="col-2"><button
-                                    onclick="app.commentsController.createComment(event)">😂</button></span>
-                            <span class="col-2"><button
-                                    onclick="app.commentsController.createComment(event)">😍</button></span>
-                            <span class="col-2"><button
-                                    onclick="app.commentsController.createComment(event)">🤬</button></span>
-                            <span class="col-2"><button
-                                    onclick="app.commentsController.createComment(event)">👌</button></span>
-                            <span class="col-2"><button
-                                    onclick="app.commentsController.createComment(event)">🙌</button></span>
+                            <form action="" class="form-group" onsubmit="app.postsController.createComment(event)">
+                                <p><input type="text" placeholder="Make Comment?" id="comment"
+                                        class="input-lg col-lg-6">
+                                </p>
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                            </form>
 
                         </div>
                     </div>
