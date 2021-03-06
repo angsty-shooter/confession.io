@@ -23,8 +23,8 @@ export default class Post {
             <div class="col-1">
                 <div class="d-flex align-items-center">
                     <div>
-                        <p class="prayer-hands; cursor: pointer;"  onclick="app.postsController.increaseKarma('${this.id}')">🙏</p>
-                        <p class="brimstone-size" onclick="app.postsController.decreaseKarma('${this.id}')">🜏</p>
+                        <p class="prayer-hands" style="cursor: pointer;"  onclick="app.postsController.increaseKarma('${this.id}')">🙏</p>
+                        <p class="brimstone-size" style="cursor: pointer;" onclick="app.postsController.decreaseKarma('${this.id}')">🜏</p>
                     </div>
                 </div>
             </div>
