@@ -10,7 +10,7 @@ export default class CommentsController {
     ProxyState.on('comments', _draw)
   }
 
-  createPost(event) {
+  createComment(event) {
     event.preventDefault()
     const form = event.target
     const rawComment = {
