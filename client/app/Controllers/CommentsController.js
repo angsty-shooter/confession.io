@@ -13,9 +13,10 @@ export default class CommentsController {
   createComment(event) {
     event.preventDefault()
     const form = event.target
+    console.log(form)
     const rawComment = {
       description: form.description.value
     }
-    commentsService.createPost(rawComment)
+    commentsService.createComment(rawComment)
   }
 }
