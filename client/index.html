@@ -9,8 +9,9 @@
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
         integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous">
+    <link href="emoji.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/style/main.css">
-    <title>client</title>
+    <title>confession.io</title>
 </head>
 
 <body>
@@ -38,7 +39,7 @@
                 <button class="btn btn-dark mx-3">Sign Up</button>
             </span>
             <div class="col-12">
-                <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#collapseExample"
+                <button class="btn btn-dark" type="button" data-toggle="collapse" data-target="#submitButton"
                     aria-expanded="false" aria-controls="collapseExample">
                     +
                 </button>
@@ -59,7 +60,7 @@
     <main class="container-fluid body-color background-img">
         <div class="row">
         </div>
-        <div class="collapse" id="collapseExample">
+        <div class="collapse" id="submitButton">
             <div class="card card-body">
                 <form action="" class="form-group">
                     <p><input type="text" placeholder="Title"></p>
@@ -97,13 +98,19 @@
                             Comments ${data.comments.title}
                         </button>
                         <div class="collapse" id="collapseExample">
-                            <div class="card card-body">
-                                ${data.comment.descriptions}
-                            </div>
+                            <p>${data.comment.descriptions}</p>
+                            <span class="col-2"><button onclick="">😀</button></span>
+                            <span class="col-2"><button>😂</button></span>
+                            <span class="col-2"><button>😍</button></span>
+                            <span class="col-2"><button>🤬</button></span>
+                            <span class="col-2"><button>👌</button></span>
+                            <span class="col-2"><button>🙌</button></span>
+
                         </div>
                     </div>
                 </div>
             </div>
+        </div>
     </main>
 
 
@@ -140,7 +147,11 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script src="app/main.js" type="module"></script>
+    <script src="config.js"></script>
+    <script src="util.js"></script>
+    <script src="jquery.emojiarea.js"></script>
+    <script src="emoji-picker.js"></script>
+    <script src="main.js" type="module"></script>
 </body>
 
 </html>
