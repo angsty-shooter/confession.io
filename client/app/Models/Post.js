@@ -23,8 +23,8 @@ export default class Post {
             <div class="col-1">
                 <div class="d-flex align-items-center">
                     <div>
-                        <p class="prayer-hands" onclick="">🙏</p>
-                        <p class="brimstone-size" onclick="">🜏</p>
+                        <p class="prayer-hands; cursor: pointer;"  onclick="app.postsController.increaseKarma('${this.id}')">🙏</p>
+                        <p class="brimstone-size" onclick="app.postsController.decreaseKarma('${this.id}')">🜏</p>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@ export default class Post {
                 <div class="card-body">
                     <span>Forgiveness</span>
                     <div class="progress">
-                        <div id="progressbar" class="progress-bar bg-success" style="width: 0%" aria-valuenow="25"
+                        <div id="progressbar" class="progress-bar bg-success" style="width: ${(this.karma * 2)}%" aria-valuenow="25"
                             aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <button class="btn btn-primary mt-3" type="button" this-toggle="collapse"

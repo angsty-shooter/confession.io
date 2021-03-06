@@ -2,6 +2,10 @@ import { dbContext } from '../db/DbContext'
 import { BadRequest } from '../utils/Errors'
 
 class PostsService {
+  async edit(id, body) {
+    return await dbContext.Posts.findByIdAndUpdate(id, body, { new: true })
+  }
+
   async create(body) {
     return await dbContext.Posts.create(body)
   }

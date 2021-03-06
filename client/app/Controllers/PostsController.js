@@ -11,6 +11,7 @@ function _draw() {
 }
 export default class PostsController {
   constructor() {
+    ProxyState.on('karma', _draw)
     ProxyState.on('posts', _draw)
     postsService.getApiPosts()
   }
@@ -24,5 +25,13 @@ export default class PostsController {
     }
     console.log(rawPost)
     postsService.createPost(rawPost)
+  }
+
+  increaseKarma(id) {
+    postsService.increaseKarma(id)
+  }
+
+  decreaseKarma(id) {
+    postsService.decreaseKarma(id)
   }
 }
