@@ -8,4 +8,5 @@ class App {
   commentsController = new CommentsController();
 }
 
+// @ts-ignore
 window.app = new App()
